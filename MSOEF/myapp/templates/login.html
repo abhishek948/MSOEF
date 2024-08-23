@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Login</h1>
+<form method="post">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.phone_number.label }}<br>
+        {{ form.phone_number(size=20) }}<br>
+        {% for error in form.phone_number.errors %}
+        <span style="color: red;">{{ error }}</span><br>
+        {% endfor %}
+    </div>
+    <div class="form-group">
+        {{ form.pin.label }}<br>
+        {{ form.pin(size=20) }}<br>
+        {% for error in form.pin.errors %}
+        <span style="color: red;">{{ error }}</span><br>
+        {% endfor %}
+    </div>
+    <button type="submit">Login</button>
+</form>
+<p><a href="{{ url_for('forgot_password') }}">Forgot PIN?</a></p>
+{% endblock %}

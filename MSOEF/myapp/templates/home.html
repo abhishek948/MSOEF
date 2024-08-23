@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSO-EF</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="MSO-EF Logo" class="logo">
+        <h1>Welcome to MSO-EF</h1>
+        <h2>MahaDev Social Private Help Organization for Emergency Fund</h2>
+    </header>
+    
+    <main>
+        <section class="intro">
+            <h2>About Us</h2>
+            <p>This community started in 2019 and aims to provide help in terms of short emergency loans, medical emergencies, and accidental cases in the family.</p>
+        </section>
+        
+        <section class="summary">
+            <h2>Our Services</h2>
+            <ul>
+                <li>Short Emergency Loans</li>
+                <li>Medical Emergency Assistance</li>
+                <li>Support in Accidental Cases</li>
+            </ul>
+        </section>
+
+        <section class="contact-info">
+            <h2>Contact Information</h2>
+            <address>
+                <p><strong>GROUP:</strong> MAHADEV GROUP </p>
+                <p><strong>Address:</strong> BRAHMPURI,ODWADIYA,DUNGARPUR,RAJ. 314034 </p>
+                <p><strong>Admin:</strong> Abhishek Bhatt</p>
+                <p><strong>Contact:</strong> 9649509717</p>
+            </address>
+        </section>
+        
+        <section class="call-to-action">
+            <h2>Get Involved</h2>
+            <p>Please sign up or log in to continue and be part of our supportive community.</p>
+            <div class="buttons">
+                <a href="{{ url_for('signup') }}" class="btn">Sign Up</a>
+                <a href="{{ url_for('login') }}" class="btn">Log In</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 MSO-EF. All rights reserved This Sites is Managed By ABITS Solution.</p>
+    </footer>
+</body>
+</html>
+{% endblock %}

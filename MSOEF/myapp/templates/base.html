@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Flash messages -->
+    {% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+    <ul class="flashes">
+        {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+    <!-- Navigation -->
+    <nav>
+        <div>
+            <a href="{{ url_for('home') }}">Home</a>
+            {% if 'phone_number' in session %}
+            <a href="{{ url_for('profile') }}">Profile</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+            {% else %}
+            <a href="{{ url_for('signup') }}">Signup</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            {% endif %}
+        </div>
+        <div>
+            <a href="{{ url_for('Monthly_Report') }}">Monthly Report</a>
+            <a href="{{ url_for('loan') }}">Loan</a>
+            <a href="{{ url_for('rules') }}">Rules</a>
+            <a href="{{ url_for('bench') }}">Bench</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('feature') }}">Feature</a>
+            <a href="{{ url_for('documents') }}">Documents</a>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>

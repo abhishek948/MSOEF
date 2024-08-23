@@ -1,0 +1,4 @@
+Flask
+pip install Flask-WTF phonenumbers
+pip install email_validator
+pip install Flask-SQLAlchemy

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Bench Page</h1>
+<p>You Are Selected Judges for period of From 01-09-2024 To 01-10-2024</p>
+<p>Selected Judges:</p>
+<ul>
+    {% for judge in judges %}
+    <li>{{ judge }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

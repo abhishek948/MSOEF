@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Sign Up</h1>
+<form method="post">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.first_name.label }}<br>
+        {{ form.first_name(size=32) }}<br>
+        {% for error in form.first_name.errors %}
+        <span style="color: red;">{{ error }}</span><br>
+        {% endfor %}
+    </div>
+    <div class="form-group">
+        {{ form.last_name.label }}<br>
+        {{ form.last_name(size=32) }}<br>
+        {% for error in form.last_name.errors %}
+        <span style="color: red;">{{ error }}</span><br>
+        {% endfor %}
+    </div>
+    <div class="form-group">
+        {{ form.email.label }}<br>
+        {{ form.email(size=32) }}<br>
+        {% for error in form.email.errors %}
+        <span style="color: red;">{{ error }}</span><br>
+        {% endfor %}
+    </div>
+    <div class="form-group">
+        {{ form.phone_number.label }}<br>
+        {{ form.phone_number(size=32) }}<br>
+        {% for error in form.phone_number.errors %}
+        <span style="color: red;">{{ error }}</span><br>
+        {% endfor %}
+    </div>
+    <div class="form-group">
+        {{ form.dob.label }}<br>
+        {{ form.dob }}<br>
+        {% for error in form.dob.errors %}
+        <span style="color: red;">{{ error }}</span><br>
+        {% endfor %}
+    </div>
+    <div class="form-group">
+        {{ form.security_question.label }}<br>
+        {{ form.security_question }}<br>
+        {% for error in form.security_question.errors %}
+        <span style="color: red;">{{ error }}</span><br>
+        {% endfor %}
+    </div>
+    <div class="form-group">
+        {{ form.security_answer.label }}<br>
+        {{ form.security_answer(size=32) }}<br>
+        {% for error in form.security_answer.errors %}
+        <span style="color: red;">{{ error }}</span><br>
+        {% endfor %}
+    </div>
+    <div class="form-group">
+        {{ form.pin.label }}<br>
+        {{ form.pin(size=32) }}<br>
+        {% for error in form.pin.errors %}
+        <span style="color: red;">{{ error }}</span><br>
+        {% endfor %}
+    </div>
+    <div class="form-group">
+        {{ form.confirm_pin.label }}<br>
+        {{ form.confirm_pin(size=32) }}<br>
+        {% for error in form.confirm_pin.errors %}
+        <span style="color: red;">{{ error }}</span><br>
+        {% endfor %}
+    </div>
+    <button type="submit">Sign Up</button>
+</form>
+{% endblock %}

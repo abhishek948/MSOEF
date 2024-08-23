@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Monthly Report{% endblock %}
+
+{% block content %}
+<h1>Create Monthly Report Group</h1>
+
+<form method="POST" action="{{ url_for('Monthly_Report') }}" enctype="multipart/form-data">
+    <label for="group_name">Group Name:</label>
+    <input type="text" id="group_name" name="group_name" required><br><br>
+
+    <label for="logo">Group Logo:</label>
+    <input type="file" id="logo" name="logo" accept=".png, .jpg, .jpeg, .gif"><br><br>
+
+    <label for="members">Select Members:</label><br>
+    {% for member in members %}
+        <input type="checkbox" id="{{ member }}" name="members" value="{{ member }}">
+        <label for="{{ member }}">{{ member }}</label><br>
+    {% endfor %}
+
+    <br>
+    <input type="submit" value="Create Group">
+</form>
+{% endblock %}
